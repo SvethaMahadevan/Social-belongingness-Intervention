@@ -1,0 +1,8 @@
+public enum StateEnum {
+    INTRO,
+    CREATEACCOUNT,
+    SENSE_OF_SHAME,
+    INTELLIGENCE,
+    MINORITY_GROUP,
+    SELF_ESTEEM,
+}
