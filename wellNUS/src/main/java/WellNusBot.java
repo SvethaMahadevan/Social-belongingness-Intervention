@@ -27,6 +27,21 @@ public class WellNusBot extends TelegramLongPollingBot {
 
     public void onUpdateReceived(Update update) {
         String command = update.getMessage().getText();
+//        List<> commandsList = new ArrayList();
+//        commandsList.add(new StartCommand());
+//        BotCommand[] commands = new BotCommand[]{
+//                new StartCommand(),
+//        };
+//        commandsList.add(new StartCommand());
+//        JSONObject obj = new JSONObject();
+//        SetMyCommands cmds = new SetMyCommands(commands);
+//        cmds.setLanguageCode("en");
+//        cmds.setScope(new BotCommandScopeAllChatAdministrators());
+//        try {
+//            execute(cmds);
+//        } catch (TelegramApiException e) {
+//            e.printStackTrace();
+//        }
 
         if(command.equals("/start")) {
             System.out.println("Running start");
