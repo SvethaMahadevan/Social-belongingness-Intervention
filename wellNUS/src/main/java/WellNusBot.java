@@ -1,18 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-import org.json.JSONObject;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
-import org.telegram.telegrambots.meta.api.methods.commands.GetMyCommands;
-import org.telegram.telegrambots.meta.api.methods.commands.SetMyCommands;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.api.objects.commands.scope.BotCommandScopeAllChatAdministrators;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-
-import commands.StartCommand;
 
 
 public class WellNusBot extends TelegramLongPollingBot {
@@ -27,21 +18,6 @@ public class WellNusBot extends TelegramLongPollingBot {
 
     public void onUpdateReceived(Update update) {
         String command = update.getMessage().getText();
-//        List<> commandsList = new ArrayList();
-//        commandsList.add(new StartCommand());
-//        BotCommand[] commands = new BotCommand[]{
-//                new StartCommand(),
-//        };
-//        commandsList.add(new StartCommand());
-//        JSONObject obj = new JSONObject();
-//        SetMyCommands cmds = new SetMyCommands(commands);
-//        cmds.setLanguageCode("en");
-//        cmds.setScope(new BotCommandScopeAllChatAdministrators());
-//        try {
-//            execute(cmds);
-//        } catch (TelegramApiException e) {
-//            e.printStackTrace();
-//        }
 
         if(command.equals("/start")) {
             System.out.println("Running start");
