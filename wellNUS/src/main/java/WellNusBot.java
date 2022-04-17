@@ -22,7 +22,7 @@ public class WellNusBot extends TelegramLongPollingBot {
 
 
     public String printIntelligence() {
-        MongoClient mongo = new MongoClient("localhost", 27017);
+        MongoClient mongo = new MongoClient(new MongoClientURI("mongodb+srv://WELLNUS:wellnus123@cluster0.jvu6f.mongodb.net/test"));
         MongoDatabase database = mongo.getDatabase("bot");
         MongoCollection<Document> collection = database.getCollection("intelligence");
         FindIterable<Document> iterDoc = collection.find();
@@ -35,7 +35,7 @@ public class WellNusBot extends TelegramLongPollingBot {
     }
 
     public String printShame() {
-        MongoClient mongo = new MongoClient("localhost", 27017);
+        MongoClient mongo = new MongoClient(new MongoClientURI("mongodb+srv://WELLNUS:wellnus123@cluster0.jvu6f.mongodb.net/test"));
         MongoDatabase database = mongo.getDatabase("bot");
         MongoCollection<Document> collection = database.getCollection("shame");
         FindIterable<Document> iterDoc = collection.find();
@@ -48,9 +48,9 @@ public class WellNusBot extends TelegramLongPollingBot {
     }
 
     public String printMinority() {
-        MongoClient mongo = new MongoClient("localhost", 27017);
+        MongoClient mongo = new MongoClient(new MongoClientURI("mongodb+srv://WELLNUS:wellnus123@cluster0.jvu6f.mongodb.net/test"));
         MongoDatabase database = mongo.getDatabase("bot");
-        MongoCollection<Document> collection = database.getCollection("minority group");
+        MongoCollection<Document> collection = database.getCollection("minority");
         FindIterable<Document> iterDoc = collection.find();
         Iterator it = iterDoc.iterator();
         String exp="";
@@ -61,9 +61,9 @@ public class WellNusBot extends TelegramLongPollingBot {
     }
 
     public String printSelfEsteem() {
-        MongoClient mongo = new MongoClient("localhost", 27017);
+        MongoClient mongo = new MongoClient(new MongoClientURI("mongodb+srv://WELLNUS:wellnus123@cluster0.jvu6f.mongodb.net/test"));
         MongoDatabase database = mongo.getDatabase("bot");
-        MongoCollection<Document> collection = database.getCollection("self-esteem");
+        MongoCollection<Document> collection = database.getCollection("esteem");
         FindIterable<Document> iterDoc = collection.find();
         Iterator it = iterDoc.iterator();
         String exp="";
