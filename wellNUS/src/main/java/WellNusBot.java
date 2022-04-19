@@ -27,8 +27,11 @@ public class WellNusBot extends TelegramLongPollingBot {
         MongoClient mongo = new MongoClient(new MongoClientURI("mongodb+srv://WELLNUS:wellnus123@cluster0.jvu6f.mongodb.net/test"));
         MongoDatabase database = mongo.getDatabase("bot");
         MongoCollection<Document> collection = database.getCollection("intelligence");
-        int rnd = new Random().nextInt(5);
-        Document iterDoc = collection.find(eq("_id", rnd)).first();
+        Random r = new Random();
+        int low = 1;
+        int high = 6;
+        int result = r.nextInt(high-low) + low;
+        Document iterDoc = collection.find(eq("_id", result)).first();
         return iterDoc.toString().replaceAll("[{}]", "").substring(23)+"\n";
     }
 
@@ -36,8 +39,11 @@ public class WellNusBot extends TelegramLongPollingBot {
         MongoClient mongo = new MongoClient(new MongoClientURI("mongodb+srv://WELLNUS:wellnus123@cluster0.jvu6f.mongodb.net/test"));
         MongoDatabase database = mongo.getDatabase("bot");
         MongoCollection<Document> collection = database.getCollection("shame");
-        int rnd = new Random().nextInt(5);
-        Document iterDoc = collection.find(eq("_id", rnd)).first();
+        Random r = new Random();
+        int low = 1;
+        int high = 6;
+        int result = r.nextInt(high-low) + low;
+        Document iterDoc = collection.find(eq("_id", result)).first();
         return iterDoc.toString().replaceAll("[{}]", "").substring(23)+"\n";
     }
 
@@ -45,8 +51,11 @@ public class WellNusBot extends TelegramLongPollingBot {
         MongoClient mongo = new MongoClient(new MongoClientURI("mongodb+srv://WELLNUS:wellnus123@cluster0.jvu6f.mongodb.net/test"));
         MongoDatabase database = mongo.getDatabase("bot");
         MongoCollection<Document> collection = database.getCollection("minority");
-        int rnd = new Random().nextInt(5);
-        Document iterDoc = collection.find(eq("_id", rnd)).first();
+        Random r = new Random();
+        int low = 1;
+        int high = 6;
+        int result = r.nextInt(high-low) + low;
+        Document iterDoc = collection.find(eq("_id", result)).first();
         return iterDoc.toString().replaceAll("[{}]", "").substring(23)+"\n";
     }
 
@@ -54,8 +63,11 @@ public class WellNusBot extends TelegramLongPollingBot {
         MongoClient mongo = new MongoClient(new MongoClientURI("mongodb+srv://WELLNUS:wellnus123@cluster0.jvu6f.mongodb.net/test"));
         MongoDatabase database = mongo.getDatabase("bot");
         MongoCollection<Document> collection = database.getCollection("esteem");
-        int rnd = new Random().nextInt(5);
-        Document iterDoc = collection.find(eq("_id", rnd)).first();
+        Random r = new Random();
+        int low = 1;
+        int high = 6;
+        int result = r.nextInt(high-low) + low;
+        Document iterDoc = collection.find(eq("_id", result)).first();
         return iterDoc.toString().replaceAll("[{}]", "").substring(23)+"\n";
     }
 
