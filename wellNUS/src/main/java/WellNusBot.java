@@ -82,9 +82,6 @@ public class WellNusBot extends TelegramLongPollingBot {
         if(command.equals("/start") || currentState == StateEnum.INTRO) {
             System.out.println("Running start");
             introduction(update);
-        } else if (command.equals("/register") || currentState == StateEnum.CREATEACCOUNT) {
-            System.out.println("Create account");
-            createAccount(update);
         } else if (command.equals(("/shame"))) {
             System.out.println("/shame");
             senseOfShame(update);
@@ -117,6 +114,7 @@ public class WellNusBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
+        followUp(update);
     }
 
     private void selfEsteem(Update update) {
@@ -131,6 +129,7 @@ public class WellNusBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
+        followUp(update);
     }
 
     private void intelligence(Update update) {
@@ -145,6 +144,7 @@ public class WellNusBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
+        followUp(update);
     }
 
     private void senseOfShame(Update update) {
@@ -158,11 +158,28 @@ public class WellNusBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
+        followUp(update);
     }
 
 
-    private void createAccount(Update update) {
-        //TODO
+    private void followUp(Update update) {
+        SendMessage response = new SendMessage();
+        response.setChatId(update.getMessage().getChatId().toString());
+        String message = "Continue learning about the experiences of adult learners...\n" +
+                "Here are some of the common challenges faced and the perspectives of the learners!\n" +
+                "To learn about the experience overcoming sense of shame /shame \n" +
+                "To learn about the experience overcoming stereotypes about intelligence /intelligence \n" +
+                "To learn about the experience overcoming stereotypes about minority groups /minority \n" +
+                "To learn about the experience overcoming low self-esteem /self_esteem";
+
+
+        response.setText(message);
+
+        try {
+            execute(response);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
     }
 
     private void introduction(Update update) {
