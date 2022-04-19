@@ -8,6 +8,8 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import static com.mongodb.client.model.Filters.eq;
+import org.bson.types.ObjectId;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
@@ -25,52 +27,36 @@ public class WellNusBot extends TelegramLongPollingBot {
         MongoClient mongo = new MongoClient(new MongoClientURI("mongodb+srv://WELLNUS:wellnus123@cluster0.jvu6f.mongodb.net/test"));
         MongoDatabase database = mongo.getDatabase("bot");
         MongoCollection<Document> collection = database.getCollection("intelligence");
-        FindIterable<Document> iterDoc = collection.find();
-        Iterator it = iterDoc.iterator();
-        String exp="";
-        while (it.hasNext()) {
-            exp=exp+it.next().toString().replaceAll("[{}]", "").substring(23)+"\n";
-        }
-        return exp;
+        int rnd = new Random().nextInt(5);
+        Document iterDoc = collection.find(eq("_id", rnd)).first();
+        return iterDoc.toString().replaceAll("[{}]", "").substring(23)+"\n";
     }
 
     public String printShame() {
         MongoClient mongo = new MongoClient(new MongoClientURI("mongodb+srv://WELLNUS:wellnus123@cluster0.jvu6f.mongodb.net/test"));
         MongoDatabase database = mongo.getDatabase("bot");
         MongoCollection<Document> collection = database.getCollection("shame");
-        FindIterable<Document> iterDoc = collection.find();
-        Iterator it = iterDoc.iterator();
-        String exp="";
-        while (it.hasNext()) {
-            exp=exp+it.next().toString().replaceAll("[{}]", "").substring(23)+"\n";
-        }
-        return exp;
+        int rnd = new Random().nextInt(5);
+        Document iterDoc = collection.find(eq("_id", rnd)).first();
+        return iterDoc.toString().replaceAll("[{}]", "").substring(23)+"\n";
     }
 
     public String printMinority() {
         MongoClient mongo = new MongoClient(new MongoClientURI("mongodb+srv://WELLNUS:wellnus123@cluster0.jvu6f.mongodb.net/test"));
         MongoDatabase database = mongo.getDatabase("bot");
         MongoCollection<Document> collection = database.getCollection("minority");
-        FindIterable<Document> iterDoc = collection.find();
-        Iterator it = iterDoc.iterator();
-        String exp="";
-        while (it.hasNext()) {
-            exp=exp+it.next().toString().replaceAll("[{}]", "").substring(23)+"\n";
-        }
-        return exp;
+        int rnd = new Random().nextInt(5);
+        Document iterDoc = collection.find(eq("_id", rnd)).first();
+        return iterDoc.toString().replaceAll("[{}]", "").substring(23)+"\n";
     }
 
     public String printSelfEsteem() {
         MongoClient mongo = new MongoClient(new MongoClientURI("mongodb+srv://WELLNUS:wellnus123@cluster0.jvu6f.mongodb.net/test"));
         MongoDatabase database = mongo.getDatabase("bot");
         MongoCollection<Document> collection = database.getCollection("esteem");
-        FindIterable<Document> iterDoc = collection.find();
-        Iterator it = iterDoc.iterator();
-        String exp="";
-        while (it.hasNext()) {
-            exp=exp+it.next().toString().replaceAll("[{}]", "").substring(23)+"\n";
-        }
-        return exp;
+        int rnd = new Random().nextInt(5);
+        Document iterDoc = collection.find(eq("_id", rnd)).first();
+        return iterDoc.toString().replaceAll("[{}]", "").substring(23)+"\n";
     }
 
 
